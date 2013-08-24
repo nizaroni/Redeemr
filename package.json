@@ -4,6 +4,7 @@
   "description": "Call out friends for douche moves and have them redeem themselves by donating to charity.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,9 +23,13 @@
     "Waldemar Figueroa <walde.fm@gmail.com>",
     "Nizar Khalife Iglesias <khalifenizar@gmail.com>",
     "Jorge Suarez <jsuarezosx@gmail.com>"
-  ]
+  ],
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/khalifenizar/Redeemr/issues"
+  },
+  "dependencies": {
+    "express": "~3.3.5",
+    "jade": "*"
   }
 }

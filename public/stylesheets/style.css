@@ -2,3 +2,9 @@ body {
 	background-color: #e7e7e7;
 }
 .header{border-bottom-color: #cccccc; background-color: white;}
+.feature_statement{ padding-bottom: 100px; padding-top: 100px; border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px; text-align: center; margin-top: 50px; }
+.feature_statement h1{ margin-bottom: 25px; text-align: center; }
+.secondary_statement{padding-bottom: 40px; padding-top: 20px; background-repeat: repeat-y; background-color: #cdcdcd; border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px;}
+.secondary_statement h2{ margin-bottom: 20px; }
+.secondary_statement .lead{ line-height: 36px; }
+.secondary_statement p { margin-top: 20px;}

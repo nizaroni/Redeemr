@@ -1,0 +1,30 @@
+{
+  "name": "Redeemr",
+  "version": "0.0.0",
+  "description": "Call out friends for douche moves and have them redeem themselves by donating to charity.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/khalifenizar/Redeemr.git"
+  },
+  "keywords": [
+    "redeemr",
+    "paypal",
+    "callout",
+    "douche"
+  ],
+  "author": "Team Cardboard Box",
+  "contributors": [
+    "Zoe Aponte <zoeaponte@gmail.com>",
+    "Waldemar Figueroa <walde.fm@gmail.com>",
+    "Nizar Khalife Iglesias <khalifenizar@gmail.com>",
+    "Jorge Suarez <jsuarezosx@gmail.com>"
+  ]
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/khalifenizar/Redeemr/issues"
+  }
+}

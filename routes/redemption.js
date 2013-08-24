@@ -1,6 +1,5 @@
-
-/*
- * GET users listing.
+/**
+ * GET Redemption page
  */
 
 exports.list = function(req, res){

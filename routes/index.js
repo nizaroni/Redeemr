@@ -1,5 +1,4 @@
-
-/*
+/**
  * GET home page.
  */
 

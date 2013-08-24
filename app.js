@@ -15,13 +15,13 @@ app.set('port', process.env.PORT || 3000);
 
 // Setup Handlebars views
 app.engine('hbs', hbs.express3({
-  defaultLayout: __dirname + '/layouts/layout.html',
-  partialsDir: __dirname + '/views/partials',
-  contentHelperName: 'partial',
+    defaultLayout: __dirname + '/views/layout/default',
+    partialsDir: __dirname + '/views/partials', 
+    contentHelperName: 'content',
+    blockHelperName: 'partial'
 }));
+app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
-app.set('view engine', 'html');
-app.engine('html', require('hbs').__express);
 
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // development only settings
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+    app.use(express.errorHandler());
 }
 
 // App routes
@@ -40,5 +40,5 @@ app.get('/', routes.index);
 
 // Create HTTP server
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+    console.log('Express server listening on port ' + app.get('port'));
 });

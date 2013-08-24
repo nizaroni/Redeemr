@@ -1,11 +1,12 @@
 /**
  * Module dependencies.
  */
-var express = require('express');
-var routes = require('./routes');
-var http = require('http');
-var path = require('path');
-var hbs = require('express-hbs');
+var http = require('http')
+    , path = require('path')
+    , express = require('express')
+    , hbs = require('express-hbs')
+    , routes = require('./routes')
+;
 
 // Create app
 var app = express();

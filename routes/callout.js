@@ -3,5 +3,5 @@
  */
 
 module.exports = function (req, res) {
-    res.render('callout', { title: 'Callout your friends?' });
+    res.render('callout', { title: 'Create a callout' });
 };

@@ -2,6 +2,6 @@
  * GET callout page
  */
 
-exports.list = function(req, res){
-  res.send("respond with a resource");
+module.exports = function (req, res) {
+    res.render('callout', { title: 'Callout your friends?' });
 };

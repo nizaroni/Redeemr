@@ -2,6 +2,10 @@
  * GET home page.
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+// Homepage view
+module.exports.index = function (req, res) {
+    res.render('index', { title: 'Express' });
 };
+
+// Callout form view
+module.exports.callout = require('./callout');

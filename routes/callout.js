@@ -11,13 +11,16 @@ module.exports = function (req, res) {
 		callout.validate(function (params) {
 			// Save params
 			callout.save(params, function (err, id) {
-				if (err) return console.error('There was an error saving the callout.', err);
+				if (err) {
+					console.error('There was an error saving the callout.', err);
+					return res.json(503, { error: err });
+				}
 
-				res.redirect('/redemption/' + id);
+				res.json(201, { calloutId: id });
 			});
 		});
 	}
 	else {
-	    res.render('callout', { title: 'Create a callout | Redeemr' });
+		res.render('callout', { title: 'Create a callout | Redeemr' });
 	}
 };

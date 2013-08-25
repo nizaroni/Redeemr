@@ -40,7 +40,7 @@ app.get('/', routes.index);
 app.get('/channel', routes.channel);
 app.get('/callout', routes.callout);
 app.post('/callout', routes.callout);
-app.get('/redemption/:id', routes.redemption);
+app.get('/redemption/:id/:redeemer?', routes.redemption);
 
 // Create HTTP server
 http.createServer(app).listen(app.get('port'), function(){

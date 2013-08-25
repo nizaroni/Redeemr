@@ -60,6 +60,13 @@ Facebook.prototype.selectFriends = function (options, callback) {
     });
 };
 
+Facebook.prototype.share = function (options, callback) {
+    options.method = 'feed';
+    this._FB.ui(options, function (response) {
+        callback(response.post_id);
+    });
+};
+
 Facebook.prototype.api = function (endpoint, callback) {
     this._FB.api(endpoint, callback);
 };

@@ -2,9 +2,12 @@ var Paypal = require('../lib/Paypal');
 var paypal = new Paypal();
 
 module.exports.create = function (req, res) {
-	var options = {
-		'url': 'http://' + req.host + (req.app.settings.port ? ':' + req.app.settings.port : '')
-	  , 'calloutId': req.params.id 
+	var port = (process.env.NODE_ENV === 'development' && req.app.settings.port) ? ':' + req.app.settings.port : ''
+		, options
+	;
+	options = {
+		'url': 'http://' + req.host + port
+	  , 'calloutId': req.params.id
 	  , 'redeemer': req.params.redeemer
 	  , 'amount': req.body.customAmount ? req.body.customAmount : req.body.defaultAmount
 	}

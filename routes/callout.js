@@ -18,6 +18,6 @@ module.exports = function (req, res) {
 		});
 	}
 	else {
-	    res.render('callout', { title: 'Create a callout' });
+	    res.render('callout', { title: 'Create a callout | Redeemr' });
 	}
 };

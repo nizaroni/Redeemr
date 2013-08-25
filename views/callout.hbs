@@ -11,30 +11,42 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">How it works?</a>
+                    <li><a href="/#how">How it works?</a></li>
+            <li><a href="/#non">Featured non-profit</a></li>
+            <li><a href="/callout">Create a call out</a></li>
+
                     </li><!-- <li><a href="#about">Examples</a></li> -->
-                </ul><a type="button" class="btn btn-default navbar-btn btn-sm btn-default navbar-right">Login / Signup</a>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/images/chuck.jpg" width="20px" height="20px" alt="..." class="img-circle"> &nbsp;<strong>Jorge L.</strong> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Create a call out</a></li>
+          <li><a href="#">My call outs</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+
             </div>
         </div>
     </nav>
     <div class="container">
         <div class="pagelayout">
             <div class="pageheader">
-                <h1>Create a call out</h1>
+                <h1>Call out a friend</h1>
             </div>
             <div class="pagebody clearfix">
                 <div class="col-md-6">
                     <h2>
-                        <strong>Step 1:</strong> Start by calling out your friend
+                        <strong>Step 1:</strong> Select a friend to call out
                     </h2>
                     <div class="roundbox js-friend-hide">
-                        <h3>Call out your friend with Facebook</h3>
+                        <h3>Call him out through Facebook</h3>
                         <button type="button" class="btn btn-default btn-lg btn-block js-facebook-friends">Select a Facebook Friend</button>
                         <p class="text-center spacer">
                             or
                         </p>
 
-                        <h3>Call out your friend with email</h3>
+                        <h3>Call him out through email</h3>
                         <div class="form-group">
                             <input type="text" class="form-control" name="callout-input-name" placeholder="Friend's Name" tabindex="1">
                         </div>
@@ -49,20 +61,20 @@
                     </h2>
                     <div class="roundbox">
                         <div class="form-group">
-                            <textarea class="form-control" rows="5" name="callout-description" required="required" tabindex="3" placeholder="Explain your call out details"></textarea>
+                            <textarea class="form-control" rows="11" name="callout-description" required="required" tabindex="3" placeholder="Explain your call out details"></textarea>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="exampleInputFile">Upload an image from your computer</label> <input type="file" id="exampleInputFile">
                             <p class="text-center">
                                 or
                             </p>
                             <button type="button" class="btn btn-default btn-block">Insert a Facebook Image</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <div class="pagefooter">
-                <label><input type="checkbox" tabindex="4" required> &nbsp;&nbsp; I accept the <a href="#">Terms &amp; Conditions</a></label> <button type="submit" class="btn btn-primary pull-right" tabindex="5">Create your call out</button>
+            <div class="pagefooter clearfix">
+               <!-- <label><input type="checkbox" tabindex="4" required> &nbsp;&nbsp; I accept the <a href="#">Terms &amp; Conditions</a></label> --> <button type="submit" class="btn btn-primary btn-lg pull-right" tabindex="5">Create your call out</button>
             </div>
         </div>
     </div>

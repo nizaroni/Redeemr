@@ -13,7 +13,7 @@ module.exports = function (req, res) {
 		// Render view
 		console.log(callout);
 		res.render('redemption', {
-			title: 'Redeem yourself',
+			title: 'Nizar Khalife | Redeemr',
 			callout: JSON.stringify(callout)
 		});
 	});

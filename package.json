@@ -35,5 +35,8 @@
     "redis": "~0.8.4",
     "sendgrid": "~0.3.0-rc.1.5",
     "paypal-rest-sdk": "~0.6.3"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }

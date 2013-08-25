@@ -41,7 +41,7 @@ app.get('/callout', routes.callout);
 app.post('/callout', routes.callout);
 app.get('/redemption/:id/:redeemer?', routes.redemption);
 app.get('/paypal/execute/:id/:redeemer?', routes.paypal.execute);
-app.post('/paypal/:id', routes.paypal.create);
+app.post('/paypal/:id/:redeemer?', routes.paypal.create);
 
 // Create HTTP server
 http.createServer(app).listen(app.get('port'), function(){

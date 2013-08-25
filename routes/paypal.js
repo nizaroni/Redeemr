@@ -4,11 +4,10 @@ var paypal = new Paypal();
 module.exports.create = function (req, res) {
 	var options = {
 		'url': 'http://' + req.host + (req.app.settings.port ? ':' + req.app.settings.port : '')
-	  , 'redeemer': req.params.redeemer
 	  , 'calloutId': req.params.id 
+	  , 'redeemer': req.params.redeemer
 	  , 'amount': req.body.customAmount ? req.body.customAmount : req.body.defaultAmount
 	}
-	console.log(options);
 
 	paypal.createPayment(options, function (response) {
 		// Send user to PayPal to approve their donation
@@ -28,7 +27,7 @@ module.exports.execute = function (req, res) {
 		calloutId: req.params.id
 	  , payerId: req.query.PayerID
 	  , token: req.query.token
-	  , redeem: req.params.redeemer
+	  , redeemer: req.params.redeemer
 	}
 
 	paypal.executePayment(options, function (error, response) {

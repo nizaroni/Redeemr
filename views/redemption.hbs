@@ -1,20 +1,21 @@
 <div role="main">
     <div class="container">
         <div class="pagelayout">
-            <div class="alert alert-success">
-                Well done! You successfully call out {{ callout.shortName }}.
-            </div>
             <div class="pageheader">
-                <h1>
-                    Support {{ callout.shortName }}'s path to redemption by making a donation
-                </h1>
+                {{#if redeemer }}
+                <h1>You've been naughty {{ callout.shortName }}! Donate to a great cause and reedem yourself</h1>
+                {{else}}
+                    {{#if callout.redeemed }}
+                <h1>Congratulations {{ callout.shortName }}! You have redeemed yourself.</h1>
+                    {{else}}
+                <h1>Support {{ callout.shortName }}'s path to redemption by making a donation</h1>
+                    {{/if}}
+                {{/if}}
             </div>
             <div class="pagebody clearfix bottomrounder">
                 <div class="col-md-4">
-                    <form class="roundbox" action="/paypal/{{ callout.id }}" method="post">
-                        <h3 style="font-weight: lighter;">
-                            Redeemer
-                        </h3>
+                    <form class="roundbox" action="/paypal/{{ callout.id }}{{#if redeemer}}/redeemer{{/if}}" method="post">
+                        <h3 style="font-weight: lighter;">Redeemer</h3>
                         <div>
                             <img src="{{ redeemerImg }}" width="100%" alt="..." class="img-thumbnail">
                         </div><br>
@@ -22,8 +23,21 @@
                             <strong>{{ callout.name }}</strong>
                         </h2>
                         <hr>
-                        <h4 class="text-center">Make a Donation</h4>
+                        {{#if redeemer }}
+                        <h4 class="text-center">Donate to Redeem Yourself</h4>
+                        {{else}}
+                            {{#if redeemed }}
+                            <h3 class="text-center">{{ callout.shortName }} has redeemed himself!</h4>
+                            <p>Continue donating to support Nizar's redemption.</p>
+                            {{else}}
+                            <h4 class="text-center">Make a Donation</h4>
+                            {{/if}}
+                        {{/if}}
+                        {{#if redeemer }}
+                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Pay $2 to redeem">
+                        {{else}}
                         <input type="submit" class="btn btn-primary btn-lg btn-block" value="Donate $2">
+                        {{/if}}                        
                         <input type="hidden" name="defaultAmount" value="2">
                         <p class="text-center">
                             or
@@ -37,7 +51,11 @@
                                 <option value="100">$100</option>
                             </select>
                         </div>
+                        {{#if redeemer }}
+                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Pay to redeem">
+                        {{else}}
                         <input type="submit" class="btn btn-primary btn-lg btn-block" value="Donate now">
+                        {{/if}}
                         <hr>
                         <a type="button" class="btn btn-default btn-block">Share on Facebook</a> <a type="button" class="btn btn-default btn-block">Share on Twitter</a>
                     </form>
@@ -47,9 +65,9 @@
                         {{ callout.description }}
                     </p>
                     <div class="clearfix">
-                        <img src="/images/chuck.jpg" width="50px" height="50px" alt="..." class="img-circle pull-left">
+                        <img src="{{#if callout.fbid}}//graph.facebook.com/{{callout.fbid}}/picture{{else}}/images/chuck.jpg{{/if}}" width="50px" height="50px" alt="..." class="img-circle pull-left">
                         <p class="pull-left" style="line-height:50px; margin-left:10px;">
-                            <strong>Caller:</strong> Jorge L.
+                            <strong>Caller:</strong> {{ callout.name }}
                         </p>
                     </div>
                     <hr>

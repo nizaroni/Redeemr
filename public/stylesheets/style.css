@@ -35,3 +35,5 @@ border-bottom-left-radius: 5px; }
 hr {border-color: #b3b3b3;}
 .lead{line-height: 36px}
 .pagelayout .alert{margin-top: 30px;}
+.navbar-brand {background-repeat: no-repeat; background-position: left center; padding-left: 34px; background-image:url('/images/logo.jpg'); margin-left: 0px !important;}
+

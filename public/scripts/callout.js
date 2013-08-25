@@ -22,22 +22,31 @@ function activateFriendSelectButton (fb, $) {
 
 function displayFriend ($, friend) {
     var friendHtml = [
-        '<div class="text-center roundbox js-friend-reset" style="height:309px !important;">'
-        , '<a href="#" class="pull-right"><span class="glyphicon glyphicon-trash"> </span></a>'
-        , '<img width="200px" height="200px" class="img-thumbnail" src="//graph.facebook.com/' + friend.id + '/picture?width=200&amp;height=200" alt="Profle picture for ' + friend.name + '" />'
-        , '<br><br><h4>' + friend.name + '</h4>'
-        , '<p><a href="#">Wrong friend? Select another friend</a></p>'
-        , '</div>'
-    ].join(' ');
+            '<div class="text-center roundbox js-friend-reset" style="height:309px !important;">'
+                , '<a href="#" class="pull-right js-undo-selection"><span class="glyphicon glyphicon-trash"> </span></a>'
+                , '<img width="200px" height="200px" class="img-thumbnail" src="//graph.facebook.com/' + friend.id + '/picture?width=200&amp;height=200" alt="Profle picture for ' + friend.name + '" />'
+                , '<br><br><h4>' + friend.name + '</h4>'
+                , '<p><a href="#" class="js-undo-selection">Wrong friend? Select another friend</a></p>'
+            , '</div>'
+        ].join(' ')
+        , $friendHide = $('.js-friend-hide')
+        , $friend
+    ;
     createHidden($, 'callout-fb-id', friend.id);
     createHidden($, 'callout-fb-name', friend.name);
     createHidden($, 'callout-fb-request', friend.request);
 
     $('.js-friend-reset').remove();
-    $('.js-friend-hide')
+    $friendHide
         .hide()
         .after(friendHtml)
     ;
+    $('.js-undo-selection').on('click', function (event) {
+        event.preventDefault();
+        $('.js-friend-reset').remove();
+        $hiddenContainer.find('[name^=callout-fb]').remove();
+        $friendHide.show();
+    });
     $('.js-submit-callout').data('friend', friend.id);
 }
 
@@ -80,6 +89,7 @@ function createHidden ($, name, value) {
     if (!$hiddenContainer) {
         $hiddenContainer = $('.js-insert-hidden');
     }
+    $hiddenContainer.find('[name=' + name + ']').remove();
     $hiddenContainer.append('<input type="hidden" name="' + name + '" value="' + value + '" />');
 }
 

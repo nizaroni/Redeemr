@@ -23,7 +23,6 @@ app.engine('hbs', hbs.express3({
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
-app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());

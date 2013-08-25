@@ -21,6 +21,7 @@ module.exports = function (req, res) {
 		});
 	}
 	else {
-		res.render('callout', { title: 'Create a callout | Redeemr' });
+	    res.render('callout', { title: 'Call out a friend | Redeemr' });
+
 	}
 };

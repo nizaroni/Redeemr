@@ -4,14 +4,14 @@ body {
 	font-weight: lighter;
 }
 .header{border-bottom-color: #cccccc; background-color: white;}
-.feature_statement{ padding-bottom: 100px; padding-top: 100px; border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px; text-align: center; }
-.feature_statement h1{ margin-bottom: 25px; text-align: center; font-weight: lighter;}
+.feature_statement{ padding-bottom: 100px; padding-top: 100px; border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px; text-align: center; background-size: cover; }
+.feature_statement h1{ margin-bottom: 25px; text-align: center; font-weight: lighter; text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);}
 .secondary_statement{padding-bottom: 40px; padding-top: 20px; }
 .secondary_statement h2{ margin-bottom: 20px; font-weight: lighter; }
-.secondary_statement .lead{ color: gray; line-height: 32px; margin-top: 40px; font-size: 18px; }
+.secondary_statement .lead{ color: gray; line-height: 28px; margin-top: 10px; font-size: 16px; }
 .secondary_statement p {  }
 .darkback {background-color: #cdcdcd; border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px;}
-.lightback {border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px;background-color: #e7e7e7;}
+.lightback {border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px;background-color: #f1f2f4;}
 .pagelayout { }
 .pageheader { margin-top: 30px; background-color: #dddddd; -webkit-border-top-left-radius: 5px;
 -webkit-border-top-right-radius: 5px;
@@ -35,5 +35,6 @@ border-bottom-left-radius: 5px; }
 hr {border-color: #b3b3b3;}
 .lead{line-height: 36px}
 .pagelayout .alert{margin-top: 30px;}
-.navbar-brand {background-repeat: no-repeat; background-position: left center; padding-left: 34px; background-image:url('/images/logo.jpg'); margin-left: 0px !important;}
+.navbar-brand {background-repeat: no-repeat; background-position: left center; padding-left: 34px; background-image:url('/images/logo.jpg'); margin-left: 15px !important; }
+
 

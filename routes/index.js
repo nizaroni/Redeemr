@@ -4,7 +4,7 @@
 
 // Homepage view
 module.exports.index = function (req, res) {
-    res.render('index', { title: 'Express' });
+    res.render('index', { title: 'Redeemr | Get bak at a friend, for a great cause.' });
 };
 
 module.exports.channel = function (req, res) {

@@ -3,18 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}</title>
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
-     <link href="stylesheets/style.css" rel="stylesheet" media="screen">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<link href="stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="stylesheets/style.css" rel="stylesheet" media="screen">
 </head>
-	<body>
+	<body data-action="{{{block 'action'}}}">
 		{{{ body }}}
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="scripts/bootstrap.min.js"></script>
+		<div id="fb-root"></div>
+		<script data-main="scripts/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
 	</body>
 </html>

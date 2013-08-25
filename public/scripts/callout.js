@@ -66,7 +66,7 @@ function activateSubmitButton (fb, $) {
 
 function calloutCreated (fb, response) {
     var loc = window.location
-        , redemptionUrl = loc.protocol + '//' + loc.host + '/redemption/' + response.calloutId + '/redeemer'
+        , redemptionUrl = loc.protocol + '//' + loc.host + '/redemption/' + response.calloutId
         , friend = $('.js-submit-callout').data('friend')
     ;
     function redirectToRedemption () {
@@ -81,7 +81,7 @@ function calloutCreated (fb, response) {
         , link: redemptionUrl
         , name: me.name + ' has called you out!'
         , description: $('.js-grab-description').val()
-        // , picture: ?
+        , picture: loc.protocol + '//' + loc.host + '/images/256.jpg'
     }, redirectToRedemption);
 }
 
@@ -93,11 +93,12 @@ function createHidden ($, name, value) {
     $hiddenContainer.append('<input type="hidden" name="' + name + '" value="' + value + '" />');
 }
 
-define([ 'fb', 'jquery', 'mainify' ], function (fb, $, mainify) {
+define([ 'fb', 'header', 'jquery', 'mainify' ], function (fb, header, $, mainify) {
     return mainify(function () {
         var loc = window.location
             , homeUrl = loc.protocol + '//' + loc.host
             , channelUrl = homeUrl + '/'
+            , $loginReact = $('.js-login-react')
         ;
         fb.init('504481939631364', channelUrl);
         fb.on('authenticated', function activateFacebookUi (e, userId) {
@@ -107,6 +108,15 @@ define([ 'fb', 'jquery', 'mainify' ], function (fb, $, mainify) {
                 createHidden($, 'callout-user-name', me.name);
                 activateFriendSelectButton(fb, $);
                 activateSubmitButton(fb, $);
+                $loginReact
+                    .empty()
+                    .append(header.renderUser(me))
+                ;
+                $('.js-login-show').show();
+                $('.js-facebook-logout').on('click', function (event) {
+                    event.preventDefault();
+                    fb.logout();
+                });
             });
         });
         fb.on('logout', function redirectToHome () {

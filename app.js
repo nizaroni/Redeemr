@@ -39,6 +39,7 @@ if ('development' == app.get('env')) {
 // App routes
 app.get('/', routes.index);
 app.get('/callout', routes.callout);
+app.post('/callout', routes.callout);
 
 // Create HTTP server
 http.createServer(app).listen(app.get('port'), function(){

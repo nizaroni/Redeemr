@@ -22,6 +22,11 @@ define([ 'fb', 'header', 'jquery', 'mainify' ], function (fb, header, $, mainify
                     .empty()
                     .append(header.renderUser(me))
                 ;
+                $('.js-login-show').show();
+                $('.js-facebook-logout').on('click', function (event) {
+                    event.preventDefault();
+                    fb.logout();
+                });
             });
         });
         fb.on('logout', function activateLoginButton () {
@@ -41,6 +46,7 @@ define([ 'fb', 'header', 'jquery', 'mainify' ], function (fb, header, $, mainify
                         fb.login();
                     })
             ;
+            $('.js-login-show').hide();
         });
         fb.checkLogin();
     });

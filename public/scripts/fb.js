@@ -52,6 +52,10 @@ Facebook.prototype.login = function (permissions) {
     });
 };
 
+Facebook.prototype.logout = function() {
+    this._FB.logout();
+};
+
 Facebook.prototype.selectFriends = function (options, callback) {
     options.method = 'apprequests';
     this._FB.ui(options, function (response) {

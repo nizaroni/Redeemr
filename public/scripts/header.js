@@ -8,7 +8,7 @@ Header.prototype.renderUser = function (user) {
     return [
         '<ul class="nav navbar-nav pull-right">'
             , '<li class="dropdown">'
-                , '<a data-toggle="dropdown" href="#">'
+                , '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'
                     , '<img alt="..." class="img-circle" height="20px" src="http://graph.facebook.com/' + user.id + '/picture?width=20&amp;height=20" width="20px"> &nbsp;'
                     , '<strong>'
                         , user.name
@@ -16,9 +16,9 @@ Header.prototype.renderUser = function (user) {
                     ,'</strong>'
                 ,'</a>'
                 , '<ul class="dropdown-menu">'
-                    , '<li><strong><a href="#">Create a callout</a></strong></li>'
-                    , '<li><strong><a class=".glyphicon .glyphicon-off" href="#">My call outs</a></strong></li>'
-                    , '<li><strong><a href="#">Logout</a></strong></li>'
+                    , '<li><a href="/callout">Create a callout</a></li>'
+                    , '<!--li><a class=".glyphicon .glyphicon-off" href="#">My call outs</a></li-->'
+                    , '<li><a href="#" class="js-facebook-logout">Logout</a></li>'
                 , '</ul>'
             , '</li>'
         , '</ul>'

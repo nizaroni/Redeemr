@@ -4,18 +4,16 @@
 module.exports = function (req, res) {
 	if (req.route.method === 'post') {
 		// Get Callout library
-
 		var Callout = require('../lib/Callout')
 			, callout = new Callout(req.body);
 
 		// Validate params
 		callout.validate(function (params) {
 			// Save params
-			callout.save(params, function(err) {
-				if (err) return console.error('There was an error saving the callout.');
+			callout.save(params, function (err, id) {
+				if (err) return console.error('There was an error saving the callout.', err);
 
-				// REDIRECT TO OTHER PAGE
-				console.log('Callout saved succesfully.');
+				res.redirect('/redemption/' + id);
 			});
 		});
 	}

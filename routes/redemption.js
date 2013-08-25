@@ -12,7 +12,7 @@ module.exports = function (req, res) {
 
 		// Is this person the redeemer?
 		var redeemer = req.params.redeemer;
-
+		console.log(callout);
 		callout.shortName = callout.name.split(' ')[0];
 		callout.id = req.params.id;
 
@@ -20,6 +20,8 @@ module.exports = function (req, res) {
 		res.render('redemption', {
 			title: callout.name + ' | Redeemr'
 		  , callout: callout
+		  , callerId: callout['caller.id']
+		  , callerName: callout['caller.name']
 		  , redeemer: redeemer
 		  , redeemerImg: callout.fbid ? '//graph.facebook.com/' + callout.fbid + '/picture/?width=500&height=500' : '/images/chuck.jpg'
 		});

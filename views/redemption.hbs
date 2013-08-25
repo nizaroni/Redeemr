@@ -26,7 +26,7 @@
                         {{#if redeemer }}
                         <h4 class="text-center">Donate to Redeem Yourself</h4>
                         {{else}}
-                            {{#if redeemed }}
+                            {{#if callout.redeemed }}
                             <h3 class="text-center">{{ callout.shortName }} has redeemed himself!</h4>
                             <p>Continue donating to support Nizar's redemption.</p>
                             {{else}}
@@ -65,9 +65,9 @@
                         {{ callout.description }}
                     </p>
                     <div class="clearfix">
-                        <img src="{{#if callout.fbid}}//graph.facebook.com/{{callout.fbid}}/picture{{else}}/images/chuck.jpg{{/if}}" width="50px" height="50px" alt="..." class="img-circle pull-left">
+                        <img src="{{#if callerId }}//graph.facebook.com/{{ callerId }}/picture{{else}}/images/chuck.jpg{{/if}}" width="50px" height="50px" alt="..." class="img-circle pull-left">
                         <p class="pull-left" style="line-height:50px; margin-left:10px;">
-                            <strong>Caller:</strong> {{ callout.name }}
+                            <strong>Caller:</strong> {{ callerName }}
                         </p>
                     </div>
                     <hr>

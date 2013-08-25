@@ -28,6 +28,7 @@ define([ 'fb', 'header', 'jquery', 'mainify' ], function (fb, header, $, mainify
                     fb.logout();
                 });
             });
+            $('.js-login-change').text('Call out a friend');
         });
         fb.on('logout', function activateLoginButton () {
             $('.js-facebook-login')
@@ -47,6 +48,7 @@ define([ 'fb', 'header', 'jquery', 'mainify' ], function (fb, header, $, mainify
                     })
             ;
             $('.js-login-show').hide();
+            $('.js-login-change').text('Get started by logging with Facebook');
         });
         fb.checkLogin();
     });

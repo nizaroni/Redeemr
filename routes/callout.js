@@ -26,7 +26,7 @@ module.exports = function (req, res) {
 				}
 
 				if (email.isEmailCallout(req.body)) {
-					email.sendCallout(baseUrl, id, req.body);
+					email.sendCallout(baseUrl, id, req.app, req.body);
 				}
 
 				res.json(201, { calloutId: id });

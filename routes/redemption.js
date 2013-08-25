@@ -10,10 +10,15 @@ module.exports = function (req, res) {
 	redemption.get(req.params.id, function (err, callout) {
 		if (err) return console.log('No redemption found.');	
 
+		console.log(callout);
+
+		callout.shortName = callout.name.split(' ')[0];
+
 		// Render view
 		res.render('redemption', {
-			title: 'Nizar Khalife | Redeemr',
-			calloutId: req.params.id
+			title: callout.name + ' | Redeemr'
+		  , callout: callout
+		  , redeemerImg: callout.fbid ? '//graph.facebook.com/' + callout.fbid + '/picture/?width=500&height=500' : '/images/chuck.jpg'
 		});
 	});
 };

@@ -9,4 +9,6 @@ module.exports.index = function (req, res) {
 
 // Callout form view
 module.exports.callout = require('./callout');
-module.exports.callout = require('./callout');
+
+// Redemption view
+module.exports.redemption = require('./redemption');

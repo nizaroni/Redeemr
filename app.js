@@ -40,6 +40,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/callout', routes.callout);
 app.post('/callout', routes.callout);
+app.get('/redemption/:id', routes.redemption);
 
 // Create HTTP server
 http.createServer(app).listen(app.get('port'), function(){

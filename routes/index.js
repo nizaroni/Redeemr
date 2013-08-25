@@ -16,3 +16,6 @@ module.exports.callout = require('./callout');
 
 // Redemption view
 module.exports.redemption = require('./redemption');
+
+// Paypal routes
+module.exports.paypal = require('./paypal');

@@ -11,10 +11,9 @@ module.exports = function (req, res) {
 		if (err) return console.log('No redemption found.');	
 
 		// Render view
-		console.log(callout);
 		res.render('redemption', {
 			title: 'Nizar Khalife | Redeemr',
-			callout: JSON.stringify(callout)
+			calloutId: req.params.id
 		});
 	});
 };

@@ -33,6 +33,7 @@
     "jade": "*",
     "express-hbs": "~0.2.0",
     "redis": "~0.8.4",
-    "sendgrid": "~0.3.0-rc.1.5"
+    "sendgrid": "~0.3.0-rc.1.5",
+    "paypal-rest-sdk": "~0.6.3"
   }
 }

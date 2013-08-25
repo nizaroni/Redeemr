@@ -1,110 +1,109 @@
-<form role="form" action="/callout" method="post">
-<nav class="navbar navbar-default navbar-fixed-top header" role="navigation">
-<div class="container">
- <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/"><strong>Redeemr</strong></a>  
-           </div>
-           
-           
+<div role="main">
+    <nav class="navbar navbar-default navbar-fixed-top header" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button> <a class="navbar-brand" href="/"><strong>Redeemr</strong></a>
+            </div>
             <div class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-             <li><a href="/#how">How it works</a></li>
-            <li><a href="/#non">Featured non-profit</a></li>
-            <li><a href="/callout">Create a call out</a></li>
-            <!-- <li><a href="#about">Examples</a></li> -->
-          </ul>
- <ul class="nav navbar-nav pull-right">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/images/chuck.jpg" width="20px" height="20px" alt="..." class="img-circle"> &nbsp;<strong>Jorge L.</strong> <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Create a call out</a></li>
-          <li><a href="#">My call outs</a></li>
-          <li><a href="#">Logout</a></li>
-        </ul>
-
-          </div>
-
-          
-
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/#how">How it works</a>
+                    </li>
+                    <li>
+                        <a href="/#non">Featured non-profit</a>
+                    </li>
+                    <li>
+                        <a href="/callout">Create a call out</a>
+                    </li><!-- <li><a href="#about">Examples</a></li> -->
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/images/chuck.jpg" width="20px" height="20px" alt="..." class="img-circle"> &nbsp;<strong>Jorge L.</strong></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Create a call out</a>
+                            </li>
+                            <li>
+                                <a href="#">My call outs</a>
+                            </li>
+                            <li>
+                                <a href="#">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="pagelayout">
+            <div class="alert alert-success">
+                Well done! You successfully call out Nizar.
+            </div>
+            <div class="pageheader">
+                <h1>
+                    Support Nizar’s path to redemption by making a donation
+                </h1>
+            </div>
+            <div class="pagebody clearfix bottomrounder">
+                <div class="col-md-4">
+                    <form class="roundbox" action="/paypal/{{ calloutId }}" method="post">
+                        <h3 style="font-weight: lighter;">
+                            Redeemer
+                        </h3>
+                        <div>
+                            <img src="/images/chuck.jpg" width="100%" alt="..." class="img-thumbnail">
+                        </div><br>
+                        <h2>
+                            <strong>Nizar K.</strong>
+                        </h2>
+                        <hr>
+                        <h4 class="text-center">Make a Donation</h4>
+                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Donate $2">
+                        <input type="hidden" name="defaultAmount" value="2">
+                        <p class="text-center">
+                            or
+                        </p>
+                        <div class="form-group">
+                            <select class="form-control" name="customAmount">
+                                <option value="2" selected>Select a different amount</option>
+                                <option value="10">$10</option>
+                                <option value="20">$20</option>
+                                <option value="50">$50</option>
+                                <option value="100">$100</option>
+                            </select>
+                        </div>
+                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Donate now">
+                        <hr>
+                        <a type="button" class="btn btn-default btn-block">Share on Facebook</a> <a type="button" class="btn btn-default btn-block">Share on Twitter</a>
+                    </form>
+                </div>
+                <div class="col-md-8">
+                    <p class="lead">
+                        Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                    </p>
+                    <div class="clearfix">
+                        <img src="/images/chuck.jpg" width="50px" height="50px" alt="..." class="img-circle pull-left">
+                        <p class="pull-left" style="line-height:50px; margin-left:10px;">
+                            <strong>Caller:</strong> Jorge L.
+                        </p>
+                    </div>
+                    <hr>
+                    <br>
+                    <div class="roundbox clearfix">
+                        <img src="/images/chuck.jpg" width="180px" height="139px" alt="..." class="img-thumbnail pull-left" style="margin-right: 20px;">
+                        <h4>
+                            <strong>Justo Venenatis Tortor Vulputate</strong>
+                        </h4>
+                        <p>
+                            Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nis. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </div><br>
+    <br>
+    <br>
 </div>
-</nav>
-
-<div class="container">
-
-  <div class="pagelayout">
-<div class="alert alert-success">Well done! You successfully call out Nizar.</div>
-<div class="pageheader">
-<h1>Support Nizar’s path to redemption by making a donation</h1>
-</div>
-
-<div class="pagebody clearfix bottomrounder">
-
-<div class="col-md-4">
-<div class="roundbox">
-<h3 style="font-weight: lighter;">Redeemer</h3>
-<div>
- <img src="/images/chuck.jpg" width="100%" alt="..." class="img-thumbnail">
- </div>
- <br>
-<h2><strong>Nizar K.</strong></h2>
- <hr>
- <h4 class="text-center">Make a Donation</h4>
- <button type="button" class="btn btn-primary btn-lg btn-block">Donate <strong>$2</strong></button>
- <p class="text-center">or</p>
- <div class="form-group">
- <select class="form-control">
-  <option>Select a different amount</option>
-  <option>$10</option>
-  <option>$20</option>
-  <option>$50</option>
-  <option>$100</option>
-</select>
-</div>
-  <button type="button" class="btn btn-primary btn-lg btn-block">Donate now</button>
-  <hr>
- <a type="button" class="btn btn-default btn-block">Share on Facebook</a>
- <a type="button" class="btn btn-default btn-block">Share on Twitter</a>
-</div>
-</div>
-<div class="col-md-8">
-<p class="lead">Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-<div class="clearfix">
- <img src="/images/chuck.jpg" width="50px" height="50px" alt="..." class="img-circle pull-left"> 
- <p class="pull-left" style="line-height:50px; margin-left:10px;"><strong>Caller:</strong> Jorge L.</p>
- </div>
- <hr>
- <br>
- <div class="roundbox clearfix">
-  <img src="/images/chuck.jpg" width="180px" height="139px" alt="..." class="img-thumbnail pull-left" style="margin-right: 20px;">
-  <h4>
-<strong>Justo Venenatis Tortor Vulputate</strong>
-</h4>
-  <p>
-Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nis. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
- </div>
-</div>
-
-
-
-
-<div class="col-md-6">
-
-
-
-
-</div>
-
-
-
-      </div>
-         </div>
-    </form>
-<br>
-<br>
-<br>
-    

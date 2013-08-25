@@ -8,7 +8,7 @@ body {
 .feature_statement h1{ margin-bottom: 25px; text-align: center; font-weight: lighter; text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);}
 .secondary_statement{padding-bottom: 40px; padding-top: 20px; }
 .secondary_statement h2{ margin-bottom: 20px; font-weight: lighter; }
-.secondary_statement .lead{ color: gray; line-height: 28px; margin-top: 10px; font-size: 16px; }
+.secondary_statement .lead{ color: #666666; line-height: 28px; margin-top: 10px; font-size: 16px; }
 .secondary_statement p {  }
 .darkback {background-color: #cdcdcd; border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px;}
 .lightback {border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px;background-color: #f1f2f4;}

@@ -7,12 +7,12 @@
         <div class="pagelayout">
             <div class="pageheader">
                 {{#if redeemer }}
-                <h1>You've been naughty {{ callout.shortName }}! Donate to a great cause and reedem yourself</h1>
+                <h1>Admit it, you did something wrong! Here's your chance to reedem yourself.</h1>
                 {{else}}
                     {{#if callout.redeemed }}
                 <h1>Congratulations {{ callout.shortName }}! You have redeemed yourself.</h1>
                     {{else}}
-                <h1>Support {{ callout.shortName }}'s path to redemption by making a donation</h1>
+                <h1>Support {{ callout.shortName }}'s path to redemption by making a contribution.</h1>
                     {{/if}}
                 {{/if}}
             </div>
@@ -28,17 +28,16 @@
                         </h2>
                         <hr>
                         {{#if redeemer }}
-                        <h4 class="text-center">Donate to Redeem Yourself</h4>
+                        <h4 class="text-center">Redeem Yourself</h4>
                         {{else}}
                             {{#if callout.redeemed }}
-                            <h3 class="text-center">{{ callout.shortName }} has redeemed himself!</h4>
-                            <p>Continue donating to support Nizar's redemption.</p>
+                            <h3 class="text-center">{{ callout.shortName }} made a contribution, make a donation</h4>
                             {{else}}
                             <h4 class="text-center">Make a Donation</h4>
                             {{/if}}
                         {{/if}}
                         {{#if redeemer }}
-                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Pay $2 to redeem">
+                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Pay $2">
                         {{else}}
                         <input type="submit" class="btn btn-primary btn-lg btn-block" value="Donate $2">
                         {{/if}}

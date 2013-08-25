@@ -79,8 +79,8 @@ function calloutCreated (fb, response) {
     fb.share({
         to: friend
         , link: redemptionUrl
-        , name: me.name + ' has called you out!'
-        , description: $('.js-grab-description').val()
+        , name: me.name.split(' ')[0] + ' has called you out on Redeemr!'
+        , description: 'Go and redeem yourself by donating to a local non-profit organization.'
         , picture: loc.protocol + '//' + loc.host + '/images/256.jpg'
     }, redirectToRedemption);
 }

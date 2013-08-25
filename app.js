@@ -36,6 +36,7 @@ if ('development' == app.get('env')) {
 
 // App routes
 app.get('/', routes.index);
+app.post('/', routes.index);
 app.get('/channel', routes.channel);
 app.get('/callout', routes.callout);
 app.post('/callout', routes.callout);

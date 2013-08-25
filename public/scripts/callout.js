@@ -1,4 +1,6 @@
-var $hiddenContainer;
+var $hiddenContainer
+    , me
+;
 
 function activateFriendSelectButton (fb, $) {
     $('.js-facebook-friends').on('click', function (event) {
@@ -7,6 +9,9 @@ function activateFriendSelectButton (fb, $) {
             message: 'I’m calling you out.'
             , max_recipients: 1
         }, function (request) {
+            if (!request) {
+                return;
+            }
             fb.api('/' + request.recipients[0], function (friend) {
                 friend.request = request.id;
                 displayFriend($, friend);
@@ -36,37 +41,39 @@ function displayFriend ($, friend) {
     $('.js-submit-callout').data('friend', friend.id);
 }
 
-function activateSubmitButton (fb, $, Parallel) {
+function activateSubmitButton (fb, $) {
     var $form = $('.js-submit-callout');
     $form.on('submit', function (event) {
-        var parallel = new Parallel(2, calloutCreated.bind({ fb: fb }));
         event.preventDefault();
-        fb.api('/me', function (me) {
-            parallel('me', me);
-        });
         $.ajax({
             url: '/callout'
             , type: 'POST'
             , data: $form.serialize()
         }).then(function (response) {
-            parallel('response', response);
+            calloutCreated(fb, response);
         });
     });
 }
 
-function calloutCreated (results) {
+function calloutCreated (fb, response) {
     var loc = window.location
-        , redemptionUrl = loc.protocol + '//' + loc.host + '/redemption/' + results.response.calloutId + '/redeemer'
+        , redemptionUrl = loc.protocol + '//' + loc.host + '/redemption/' + response.calloutId + '/redeemer'
+        , friend = $('.js-submit-callout').data('friend')
     ;
-    this.fb.share({
-        to: $('.js-submit-callout').data('friend')
+    function redirectToRedemption () {
+        window.location = redemptionUrl;
+    }
+
+    if (!friend) {
+        return redirectToRedemption();
+    }
+    fb.share({
+        to: friend
         , link: redemptionUrl
-        , name: results.me.name + ' has called you out!'
+        , name: me.name + ' has called you out!'
         , description: $('.js-grab-description').val()
         // , picture: ?
-    }, function () {
-        window.location = redemptionUrl;
-    });
+    }, redirectToRedemption);
 }
 
 function createHidden ($, name, value) {
@@ -76,7 +83,7 @@ function createHidden ($, name, value) {
     $hiddenContainer.append('<input type="hidden" name="' + name + '" value="' + value + '" />');
 }
 
-define([ 'fb', 'jquery', 'mainify', 'parallel' ], function (fb, $, mainify, Parallel) {
+define([ 'fb', 'jquery', 'mainify' ], function (fb, $, mainify) {
     return mainify(function () {
         var loc = window.location
             , homeUrl = loc.protocol + '//' + loc.host
@@ -84,9 +91,13 @@ define([ 'fb', 'jquery', 'mainify', 'parallel' ], function (fb, $, mainify, Para
         ;
         fb.init('504481939631364', channelUrl);
         fb.on('login', function activateFacebookUi (e, userId) {
-            createHidden($, 'callout-user-id', userId);
-            activateFriendSelectButton(fb, $);
-            activateSubmitButton(fb, $, Parallel);
+            fb.api('/me', function (response) {
+                me = response;
+                createHidden($, 'callout-user-id', me.id);
+                createHidden($, 'callout-user-name', me.name);
+                activateFriendSelectButton(fb, $);
+                activateSubmitButton(fb, $);
+            });
         });
         fb.on('logout', function redirectToHome () {
             window.location = homeUrl;

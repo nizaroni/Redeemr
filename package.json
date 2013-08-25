@@ -32,6 +32,7 @@
     "express": "~3.3.5",
     "jade": "*",
     "express-hbs": "~0.2.0",
-    "redis": "~0.8.4"
+    "redis": "~0.8.4",
+    "sendgrid": "~0.3.0-rc.1.5"
   }
 }

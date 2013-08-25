@@ -53,17 +53,25 @@ Facebook.prototype.login = function (permissions) {
 Facebook.prototype.selectFriends = function (options, callback) {
     options.method = 'apprequests';
     this._FB.ui(options, function (response) {
-        callback({
-            id: response.request
-            , recipients: response.to
-        });
+        var request = !response
+            ? null
+            : {
+                id: response.request
+                , recipients: response.to
+            }
+        ;
+        callback(request);
     });
 };
 
 Facebook.prototype.share = function (options, callback) {
     options.method = 'feed';
     this._FB.ui(options, function (response) {
-        callback(response.post_id);
+        var post = !response
+            ? null
+            : response.post_id
+        ;
+        callback(post);
     });
 };
 

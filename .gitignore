@@ -1,4 +1,5 @@
 .DS_Store
 dump.rdb
 node_modules/
+.env
 Procfile.dev

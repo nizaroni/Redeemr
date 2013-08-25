@@ -17,9 +17,11 @@ function activateFriendSelectButton (fb, $) {
 
 function displayFriend ($, friend) {
     var friendHtml = [
-        '<div class="roundbox js-friend-reset">'
-        , '<img src="//graph.facebook.com/' + friend.id + '/picture" alt="Profle picture for ' + friend.name + '" />'
-        , '<h4>' + friend.name + '</h4>'
+        '<div class="text-center roundbox js-friend-reset" style="height:309px !important;">'
+        , '<a href="#" class="pull-right"><span class="glyphicon glyphicon-trash"> </span></a>'
+        , '<img width="200px" height="200px" class="img-thumbnail" src="//graph.facebook.com/' + friend.id + '/picture" alt="Profle picture for ' + friend.name + '" />'
+        , '<br><br><h4>' + friend.name + '</h4>'
+        , '<p><a href="#">Wrong friend? Select another friend</a></p>'
         , '</div>'
     ].join(' ');
     createHidden($, 'callout-fb-id', friend.id);

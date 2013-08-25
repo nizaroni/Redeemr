@@ -10,8 +10,6 @@ module.exports = function (req, res) {
 	redemption.get(req.params.id, function (err, callout) {
 		if (err) return console.log('No redemption found.');	
 
-		console.log(callout);
-
 		callout.shortName = callout.name.split(' ')[0];
 
 		// Render view

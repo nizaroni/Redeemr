@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>{{ title }}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Bootstrap -->
-	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="/stylesheets/style.css" rel="stylesheet" media="screen">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/stylesheets/style.css" rel="stylesheet" media="screen">
 </head>
-	<body data-action="{{{block 'action'}}}">
-		{{{ body }}}
-		<div id="fb-root"></div>
-		<script data-main="/scripts/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
-	</body>
+<body data-action="{{{block 'action'}}}">
+    <nav class="navbar navbar-default navbar-fixed-top header" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button> <a class="navbar-brand" href="/"><strong>Redeemr</strong></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/#how">How it works</a></li>
+                    <li><a href="/#non">Featured non-profit</a></li>
+                    <li><a href="/callout">Create a call out</a></li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/images/chuck.jpg" width="20px" height="20px" alt="..." class="img-circle"> &nbsp;<strong>Jorge L.</strong></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Create a call out</a></li>
+                            <li><a href="#">My call outs</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {{{ body }}}
+
+    <div id="fb-root"></div>
+    <script data-main="/scripts/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+</body>
 </html>

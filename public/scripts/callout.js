@@ -24,7 +24,7 @@ function displayFriend ($, friend) {
     var friendHtml = [
         '<div class="text-center roundbox js-friend-reset" style="height:309px !important;">'
         , '<a href="#" class="pull-right"><span class="glyphicon glyphicon-trash"> </span></a>'
-        , '<img width="200px" height="200px" class="img-thumbnail" src="//graph.facebook.com/' + friend.id + '/picture" alt="Profle picture for ' + friend.name + '" />'
+        , '<img width="200px" height="200px" class="img-thumbnail" src="//graph.facebook.com/' + friend.id + '/picture?width=200&amp;height=200" alt="Profle picture for ' + friend.name + '" />'
         , '<br><br><h4>' + friend.name + '</h4>'
         , '<p><a href="#">Wrong friend? Select another friend</a></p>'
         , '</div>'
@@ -90,7 +90,7 @@ define([ 'fb', 'jquery', 'mainify' ], function (fb, $, mainify) {
             , channelUrl = homeUrl + '/'
         ;
         fb.init('504481939631364', channelUrl);
-        fb.on('login', function activateFacebookUi (e, userId) {
+        fb.on('authenticated', function activateFacebookUi (e, userId) {
             fb.api('/me', function (response) {
                 me = response;
                 createHidden($, 'callout-user-id', me.id);

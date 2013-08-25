@@ -17,9 +17,8 @@ app.set('port', process.env.PORT || 3000);
 // Setup Handlebars views
 app.engine('hbs', hbs.express3({
     defaultLayout: __dirname + '/views/layout/default',
-    partialsDir: __dirname + '/views/partials', 
-    contentHelperName: 'content',
-    blockHelperName: 'partial'
+    partialsDir: __dirname + '/views/partials',
+    contentHelperName: 'content'
 }));
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
@@ -38,6 +37,7 @@ if ('development' == app.get('env')) {
 
 // App routes
 app.get('/', routes.index);
+app.get('/channel', routes.channel);
 app.get('/callout', routes.callout);
 app.post('/callout', routes.callout);
 app.get('/redemption/:id', routes.redemption);

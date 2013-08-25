@@ -18,8 +18,8 @@ module.exports = function (req, res) {
 				var port = req.app.settings.port
 					, baseUrl
 				;
-				port = port ? (':' + port) : ''
-				baseUrl = 'http://' + req.host + port
+				port = process.env.NODE_ENV === 'development' && port ? (':' + port) : '';
+				baseUrl = 'http://' + req.host + port;
 				if (err) {
 					console.error('There was an error saving the callout.', err);
 					return res.json(503, { error: err });

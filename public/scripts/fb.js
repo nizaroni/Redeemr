@@ -4,7 +4,7 @@ function Facebook ($, FB) {
     this._eventEmitter = this.$({});
 }
 
-Facebook.prototype.events = [ 'login', 'cancel', 'logout' ];
+Facebook.prototype.events = [ 'login', 'cancel', 'authenticated', 'logout' ];
 
 Facebook.prototype.init = function (appId, channeUrl) {
     var self = this;
@@ -32,7 +32,7 @@ Facebook.prototype.checkLogin = function (callback) {
     self._FB.Event.subscribe('auth.statusChange', function (response) {
         self.isLoggedIn = response.status === 'connected';
         if (self.isLoggedIn) {
-            self.emit('login', response.authResponse.userID);
+            self.emit('authenticated', response.authResponse.userID);
         } else {
             self.emit('logout');
         }
@@ -44,7 +44,9 @@ Facebook.prototype.login = function (permissions) {
     self._FB.login(function (response) {
         self.isLoggedIn = Boolean(response.authResponse);
         // Login event is handled by `checkLogin()`
-        if (!self.isLoggedIn) {
+        if (self.isLoggedIn) {
+            self.emit('login', response.authResponse.userID);
+        } else {
             self.emit('cancel');
         }
     });

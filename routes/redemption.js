@@ -8,14 +8,13 @@ redemption = new Redemption;
 module.exports = function (req, res) {
 	// Get redemption data
 	redemption.get(req.params.id, function (err, callout) {
-		if (err) return console.log('No redemption found.');	
+		if (err) return console.log('No redemption found.');
 
 		// Is this person the redeemer?
 		var redeemer = req.params.redeemer;
 
 		callout.shortName = callout.name.split(' ')[0];
 		callout.id = req.params.id;
-		console.log(callout);
 
 		// Render view
 		res.render('redemption', {

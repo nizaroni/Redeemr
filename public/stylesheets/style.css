@@ -12,7 +12,6 @@ body {
 .secondary_statement p {  }
 .darkback {background-color: #cdcdcd; border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px;}
 .lightback {border-bottom-color: #b3b3b3; border-bottom-style: solid; border-bottom-width: 1px;background-color: #e7e7e7;}
-.in .navbar-nav {margin-top: 0px; display: block;}
 .pagelayout { }
 .pageheader { margin-top: 30px; background-color: #dddddd; -webkit-border-top-left-radius: 5px;
 -webkit-border-top-right-radius: 5px;
@@ -23,12 +22,16 @@ border-top-right-radius: 5px; }
 .pageheader h1 { margin: 0px; color: #4c4c4c; font-size: 22px !important; padding: 30px; font-weight: lighter;}
 .pagebody { background-color: white; padding-top: 40px; padding-right: 30px; padding-left: 30px; padding-bottom: 30px; }
 .pagebody h2 { margin-bottom: 20px; margin-top: 0px; font-size: 18px; font-weight: lighter; }
-.pagebody h3 { margin-top: 0px; margin-bottom: 15px; font-size: 14px; font-weight: bold; }
+.pagebody h3 { margin-bottom: 10px; margin-top: 0px; font-size: 14px; font-weight: bold; }
+.pagebody h4 { margin-top: 0px; margin-bottom: 15px; font-size: 14px; font-weight: bold; }
 .roundbox { margin-bottom: 30px; background-color: #eeeeee; padding: 20px;-webkit-border-radius: 5px;-moz-border-radius: 5px; border-radius: 5px;}
 .spacer {margin-bottom: 15px !important; margin-top: 15px !important;}
-.pagefooter { padding: 30px; margin-bottom: 30px; background-color: #dddddd; -webkit-border-bottom-right-radius: 5px;
+.pagefooter { padding: 30px; margin-bottom: 30px; background-color: #cccccc; -webkit-border-bottom-right-radius: 5px;
 -webkit-border-bottom-left-radius: 5px;
 -moz-border-radius-bottomright: 5px;
 -moz-border-radius-bottomleft: 5px;
 border-bottom-right-radius: 5px;
 border-bottom-left-radius: 5px; }
+hr {border-color: #b3b3b3;}
+.lead{line-height: 36px}
+.pagelayout .alert{margin-top: 30px;}

@@ -44,4 +44,8 @@ hr {border-color: #b3b3b3;}
 border-bottom-right-radius: 5px;
 border-bottom-left-radius: 5px;}
 .cta{text-decoration: none; color: white; background-color: #1d7aba; font-weight: bold; font-size: 18px; padding: 20px;}
-
+#info-headline {
+	font-size: 26px;
+	margin-bottom: 25px;
+	line-height: 1.2;
+}
